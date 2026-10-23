@@ -59,6 +59,5 @@
       "devuelto": true,
       "id": "D8lnJO0Qczs"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
