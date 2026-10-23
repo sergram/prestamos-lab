@@ -11,6 +11,7 @@ interface FormularioPrestamoProps {
     fechaLimite: string
   ) => void;
   onCancelar: () => void;
+  guardando: boolean;
 }
 
 interface ErroresFormulario {
@@ -22,7 +23,8 @@ interface ErroresFormulario {
 function FormularioPrestamo({
   equipo,
   onGuardar,
-  onCancelar
+  onCancelar,
+  guardando
 }: FormularioPrestamoProps) {
   const [solicitante, setSolicitante] = useState('');
   const [carne, setCarne] = useState('');
@@ -121,10 +123,12 @@ function FormularioPrestamo({
         )}
 
         <div className="acciones-formulario">
-          <button type="submit">Guardar préstamo</button>
-          <button type="button" onClick={onCancelar}>
-            Cancelar
-          </button>
+      <button type="submit" disabled={guardando}>
+        {guardando ? 'Guardando...' : 'Guardar préstamo'}
+      </button>
+      <button type="button" onClick={onCancelar}>
+        Cancelar
+      </button>
         </div>
       </form>
     </div>

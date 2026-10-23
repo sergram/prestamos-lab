@@ -227,3 +227,42 @@ main h2 {
     flex-direction: column;
   }
 }
+
+.mensaje-cargando {
+  text-align: center;
+  padding: 30px;
+  font-size: 18px;
+  color: #475569;
+}
+
+.panel-error-api {
+  background: #fee2e2;
+  border: 1px solid #f87171;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.panel-error-api h3 {
+  color: #991b1b;
+}
+
+.panel-error-api p {
+  color: #7f1d1d;
+}
+
+.panel-error-api button {
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.panel-error-api button:hover {
+  background: #b91c1c;
+}
+
+  

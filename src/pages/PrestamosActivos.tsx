@@ -4,7 +4,7 @@ import type { Equipo, Prestamo } from '../types';
 interface PrestamosActivosProps {
   equipos: Equipo[];
   prestamos: Prestamo[];
-  onDevolver: (id: number) => void;
+  onDevolver: (id: number | string) => void;
 }
 
 function PrestamosActivos({

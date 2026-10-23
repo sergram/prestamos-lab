@@ -6,7 +6,7 @@ export interface Equipo {
 }
 
 export interface Prestamo {
-  id: number;
+  id: number | string;
   equipoId: number;
   solicitante: string;
   carne: string;
