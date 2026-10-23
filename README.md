@@ -1,32 +1,102 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# Préstamos Lab
 
-Currently, two official plugins are available:
+Aplicación web para gestionar el préstamo y devolución de equipos de un laboratorio, desarrollada con React, TypeScript y Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologías utilizadas
 
-## React Compiler
+- React
+- TypeScript
+- Vite
+- CSS
+- json-server
+- API REST
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades
 
-## Expanding the Oxlint configuration
+- Visualización de ocho equipos del laboratorio.
+- Búsqueda de equipos por nombre.
+- Filtrado por categoría.
+- Registro de préstamos.
+- Validación de los datos del solicitante.
+- Préstamos con duración máxima de tres días.
+- Restricción de un préstamo activo por carné.
+- Devolución de equipos.
+- Actualización de disponibilidad.
+- Identificación visual de préstamos vencidos.
+- Persistencia de datos mediante json-server.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Categorías de equipos
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- Laptop
+- Proyector
+- Router
+
+## Requisitos
+
+- Node.js
+- npm
+
+## Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/sergram/prestamos-lab.git
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Entrar al proyecto:
+
+```bash
+cd prestamos-lab
+```
+
+Instalar las dependencias:
+
+```bash
+npm install
+```
+
+## Configuración
+
+Crear un archivo `.env` en la raíz del proyecto con:
+
+```env
+VITE_API_URL=http://localhost:3001
+```
+
+## Ejecución
+
+Abrir una terminal e iniciar la API REST:
+
+```bash
+npx json-server db.json --port 3001
+```
+
+Abrir otra terminal e iniciar React:
+
+```bash
+npm run dev
+```
+
+Acceder a la aplicación:
+
+http://localhost:5173
+
+## Endpoints principales
+
+- GET /equipos
+- GET /prestamos
+- POST /prestamos
+- PATCH /prestamos/:id
+- PATCH /equipos/:id
+
+## Reglas de negocio
+
+1. Un equipo no puede prestarse si está ocupado.
+2. Un solicitante no puede tener más de un préstamo activo.
+3. La duración máxima de un préstamo es de tres días.
+4. Al registrar un préstamo, el equipo cambia a no disponible.
+5. Al devolver un préstamo, el equipo vuelve a estar disponible.
+6. Los préstamos vencidos se identifican visualmente.
+
