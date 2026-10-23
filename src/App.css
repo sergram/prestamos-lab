@@ -88,3 +88,142 @@ main h2 {
   background-color: #94a3b8;
   cursor: not-allowed;
 }
+
+.seccion-formulario {
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+.panel-formulario {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.panel-formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panel-formulario label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.panel-formulario input {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.mensaje-error {
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.acciones-formulario {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.acciones-formulario button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.acciones-formulario button:first-child {
+  background: #2563eb;
+  color: white;
+}
+
+.acciones-formulario button:last-child {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.prestamos-activos {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.prestamos-activos table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prestamos-activos th,
+.prestamos-activos td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.prestamos-activos th {
+  background: #1e293b;
+  color: white;
+}
+
+.fila-vencida {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.boton-devolver {
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.boton-devolver:hover {
+  background: #15803d;
+}
+
+.filtros-inventario {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.filtros-inventario input,
+.filtros-inventario select {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+  background: white;
+  color: #1e293b;
+}
+
+.filtros-inventario input {
+  flex: 1;
+  min-width: 0;
+}
+
+.filtros-inventario select {
+  min-width: 180px;
+}
+
+@media (max-width: 600px) {
+  .filtros-inventario {
+    flex-direction: column;
+  }
+}
